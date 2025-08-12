@@ -4,6 +4,7 @@ A **Full-Stack Job Application Tracker** – A web application for tracking and 
 Features include **CRUD operations**, dynamic filtering/sorting via a dashboard UI, work notes for each application, and metrics such as **MTTR** and application status distribution.  
 Built with **Django**, **MySQL**, **vanilla JavaScript**, and deployed with **Nginx** on **Linux**.
 
+
 ---
 
 ## Table of Contents
