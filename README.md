@@ -63,3 +63,42 @@ flowchart LR
         C
         L[(Logs)]
     end
+erDiagram
+    USERS ||--o{ JOB : creates
+    COMPANY ||--o{ JOB : "posted by"
+    JOB ||--o{ JOB_NOTE : has
+    USERS ||--o{ JOB_NOTE : writes
+
+    USERS {
+        INT id PK
+        VARCHAR email
+        VARCHAR role
+        DATETIME created_at
+    }
+
+    COMPANY {
+        INT id PK
+        VARCHAR name
+        DATETIME created_at
+    }
+
+    JOB {
+        INT id PK
+        INT user_id FK
+        INT company_id FK
+        VARCHAR title
+        ENUM status  "Saved|Applied|Interview|Offer|Rejected"
+        VARCHAR source
+        INT salary_min
+        INT salary_max
+        DATETIME created_at
+        DATETIME updated_at
+    }
+
+    JOB_NOTE {
+        INT id PK
+        INT job_id FK
+        INT author_id FK
+        TEXT body
+        DATETIME created_at
+    }
