@@ -61,3 +61,6 @@ flowchart LR
     C
     L[(Logs)]
   end
+---
+---
+## Database Schema
