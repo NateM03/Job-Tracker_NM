@@ -49,18 +49,17 @@ Built with **Django**, **MySQL**, **vanilla JavaScript**, and deployed with **Ng
 ---
 
 ## Architecture
+
 ```mermaid
 flowchart LR
-  A[Browser (HTML/JS)] -- HTTPS --> B[Nginx Reverse Proxy]
-  B -- /api/* proxy --> C[Django API (Gunicorn)]
-  C -- SQL --> D[(MySQL)]
-  B -- serve --> E[Static Assets (web/)]
-  C <-- JSON logs / request-id --> L[Log Files]
-  subgraph Host
-    B
-    C
-    L[(Logs)]
-  end
----
----
-## Database Schema
+    A[Browser (HTML/JS)] -->|HTTPS| B[Nginx Reverse Proxy]
+    B -->|/api/* proxy| C[Django API (Gunicorn)]
+    C -->|SQL| D[(MySQL)]
+    B -->|serve| E[Static Assets (web/)]
+    C -->|JSON logs / request-id| L[Log Files]
+
+    subgraph Host
+        B
+        C
+        L[(Logs)]
+    end
